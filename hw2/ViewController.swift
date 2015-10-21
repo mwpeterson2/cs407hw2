@@ -9,7 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet var eventText: UITextField!
+    @IBOutlet var dateText: UITextField!
+    @IBOutlet var timeText: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +25,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-  //changing some stuff for the git
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
+    {
+        if (segue.identifier == "DataTransfer")
+        {
+            let svc = segue.destinationViewController as! TableViewController
+            
+            svc.name = eventText.text!
+            svc.date = dateText.text!
+            svc.time = timeText.text!
+        }
+    }
 }
 
