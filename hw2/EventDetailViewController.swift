@@ -38,7 +38,7 @@ class EventDetailViewController: UIViewController
             date = dateField.text!
             time = timeField.text!
             
-            event = "\(name)      -      \(date)      -      \(time)"
+            event = "\(name)  -  \(date)  -  \(time)"
         }
     }
     
